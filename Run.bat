@@ -1,0 +1,1 @@
+java -classpath pircbot.jar;. MyBotMain
