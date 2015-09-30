@@ -18,6 +18,7 @@ public class MyBot extends PircBot {
 		//List Commands
 		commandList.add(new Witness());
 		commandList.add(new Time());
+		commandList.add(new Deeds());
     }
 
     public void onMessage(String channel, String sender,

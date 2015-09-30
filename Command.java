@@ -1,4 +1,6 @@
-public class Command {
+import org.jibble.pircbot.*;
+
+public class Command extends PircBot{
 	//If it only needs the start of the message, it's true, otherwise if it's like .time it needs to be the entire message;
 	boolean startorall;
 	String trigger;
