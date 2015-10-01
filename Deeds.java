@@ -28,9 +28,9 @@ public class Deeds extends Command {
 			in.close();
 			String[] texts = text.split("\n");
 			for (int i = 0; i < texts.length; i++) {
-				sendMessage(sender, texts[i]);
+				bot.sendMessage(sender, texts[i]);
 			}
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 		return sender + ": Deeds sent";
