@@ -1,15 +1,18 @@
 package commands;
 
-import commands.Command;
+import org.jibble.pircbot.PircBot;
 
-import java.util.*;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Deeds extends Command {
     File witnessLog;
 
-    public Deeds() {
-        startorall = false;
+    public Deeds(PircBot bot) {
+        super(bot);
+
+        doesMsgStartWithTrigger = false;
         trigger = ".deeds";
         name = "commands.Deeds";
         description = "Displays deeds";
@@ -23,21 +26,21 @@ public class Deeds extends Command {
         }
     }
 
-    public String Execute(String channel, String sender, String login, String hostname, String message) {
+    public void execute(String channel, String sender, String login, String hostname, String message) {
+        StringBuilder text = new StringBuilder();
         try {
-            Scanner in = new Scanner(new File(witnessLog.getName()));
-            String text = "";
+            Scanner in = new Scanner(witnessLog);
             while (in.hasNextLine()) {
-                text += in.nextLine() + "\n";
+                text.append(in.nextLine() + "\n");
             }
             in.close();
-            String[] texts = text.split("\n");
-            for (int i = 0; i < texts.length; i++) {
-                //sendMessage("#saelfdev", texts[i]);
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return sender + ": commands.Deeds sent";
+
+        String[] texts = text.toString().split("\n");
+        for (int i = 0; i < texts.length; i++) {
+            sendMessage(sender, texts[i]);
+        }
     }
 }

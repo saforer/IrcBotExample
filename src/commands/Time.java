@@ -1,17 +1,20 @@
 package commands;
 
-import commands.Command;
+import org.jibble.pircbot.PircBot;
 
 public class Time extends Command {
-    public Time() {
-        startorall = false;
+
+    public Time(PircBot bot) {
+        super(bot);
+
+        doesMsgStartWithTrigger = false;
         trigger = ".time";
         name = "commands.Time";
         description = "Displays time for an example";
     }
 
-    public String Execute(String channel, String sender, String login, String hostname, String message) {
+    public void execute(String channel, String sender, String login, String hostname, String message) {
         String time = new java.util.Date().toString();
-        return sender + ": The time is now " + time;
+        sendMessage(sender, "The time is now " + time);
     }
 }
