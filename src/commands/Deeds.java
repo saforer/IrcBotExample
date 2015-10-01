@@ -33,7 +33,7 @@ public class Deeds extends Command {
             in.close();
             String[] texts = text.split("\n");
             for (int i = 0; i < texts.length; i++) {
-                sendMessage("#saelfdev", texts[i]);
+                //sendMessage("#saelfdev", texts[i]);
             }
         } catch (Exception e) {
             e.printStackTrace();

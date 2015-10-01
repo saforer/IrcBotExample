@@ -13,7 +13,7 @@ public class MyBot extends PircBot {
     File witnessLog;
 
     public MyBot() {
-        this.setName("poemBot");
+        this.setName("MyBot");
 
         //Setup FileStuffs
         FileInfo();

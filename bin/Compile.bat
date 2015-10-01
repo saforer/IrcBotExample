@@ -1,2 +1,2 @@
-javac -classpath pircbot.jar;. *.java
-pause
+cd ..
+gradlew botJar

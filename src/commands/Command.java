@@ -1,17 +1,13 @@
 package commands;
 
-import org.jibble.pircbot.*;
-
-public class Command extends PircBot {
+public abstract class Command {
     //If it only needs the start of the message, it's true, otherwise if it's like .time it needs to be the entire message;
-    boolean startorall;
-    String trigger;
-    String name;
-    String description;
+    protected boolean startorall;
+    protected String trigger;
+    protected String name;
+    protected String description;
 
-    public String Execute(String channel, String sender, String login, String hostname, String message) {
-        return "";
-    }
+    protected abstract String Execute(String channel, String sender, String login, String hostname, String message);
 
     public String Evaluate(String channel, String sender, String login, String hostname, String message) {
         String output = "";
