@@ -1,4 +1,4 @@
-Witness: Wed Sep 30 19:19:43 EDT 2015 <TomR>  me
-Witness: Wed Sep 30 19:55:06 EDT 2015 <TomR>  test
-Witness: Wed Sep 30 19:55:09 EDT 2015 <TomR>  test2
-Witness: Wed Sep 30 19:55:12 EDT 2015 <TomR>  test3
+commands.Witness: Wed Sep 30 19:19:43 EDT 2015 <TomR>  me
+commands.Witness: Wed Sep 30 19:55:06 EDT 2015 <TomR>  test
+commands.Witness: Wed Sep 30 19:55:09 EDT 2015 <TomR>  test2
+commands.Witness: Wed Sep 30 19:55:12 EDT 2015 <TomR>  test3
