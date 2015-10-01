@@ -15,7 +15,5 @@ public class MyBotMain {
 
         // Join the #pircbot channel.
         bot.joinChannel("#saelfdev");
-
     }
-
 }

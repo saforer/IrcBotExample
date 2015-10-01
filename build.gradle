@@ -1,0 +1,38 @@
+apply plugin: 'java'
+
+version = '1.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+task botJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'MyBotMain'
+    }
+    baseName = project.name
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'pircbot:pircbot:1.5.0'
+}
+
+
+
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.7'
+}
