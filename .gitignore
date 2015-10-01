@@ -8,3 +8,6 @@ hs_err_pid*
 *.iml
 .idea/
 build/
+
+# .gradle
+.gradle
